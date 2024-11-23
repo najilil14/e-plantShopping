@@ -237,6 +237,9 @@ function ProductList() {
     e.preventDefault();
     setShowCart(true); // Set showCart to true when cart icon is clicked
 };
+
+const cartItems = useSelector(state => state.cart.items);
+
 const handlePlantsClick = (e) => {
     e.preventDefault();
     setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
@@ -254,7 +257,7 @@ const handlePlantsClick = (e) => {
     dispatch(addItem(product));
     setAddedToCart((prevState) => ({
        ...prevState,
-       [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
+       [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart       
      }));
   };
 
